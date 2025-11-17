@@ -4,7 +4,7 @@
     <title><%= content_for(:title) || "Cabinet Office Test" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    
+    <link rel="stylesheet" href="/govuk-frontend.min.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,14 +15,13 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <link rel="stylesheet" href="/govuk-frontend.min.css">
 
     <%= javascript_importmap_tags %>
   </head>
-  <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+<script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
   <body class="govuk-template__body">
     <%= yield %>
-  <script type="module" src="/govuk-frontend.min.js"></script>
+    <script type="module" src="/govuk-frontend.min.js"></script>
   <script type="module">
     import { initAll } from '/govuk-frontend.min.js'
     initAll()
